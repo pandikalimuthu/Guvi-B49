@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task2</title>
+    <style>
+        body{
+            padding: 50px;
+            font-size: 1.2rem;
+        }
+        code {
+            background-color:  lightgray;
+        }
+        div {
+            padding: 20px 100px 20px 100px ;
+            background-color:  lightgray;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <h1>Objects And Its Internal Representation In JavaScript</h1>
+    <hr>
+    <p>Objects, in JavaScript, is it’s most important data-type and forms the building blocks for modern JavaScript. These objects are quite different from JavaScript’s primitive data-types(Number, String, Boolean, null, undefined and symbol) in the sense that while these primitive data-types all store a single value each (depending on their types).</p>
+    <p>Objects are more complex and each object may contain any combination of these primitive data-types as well as reference data-types.
+        An object, is a reference data type. Variables that are assigned a reference value are given a reference or a pointer to that value. That reference or pointer points to the location in memory where the object is stored. The variables don’t actually store the value.</p>
+        <p>Loosely speaking, objects in JavaScript may be defined as an unordered collection of related data, of primitive or reference types, in the form of “key: value” pairs. These keys can be variables or functions and are called properties and methods, respectively, in the context of an object.</p>
+        <p>For Eg. If your object is a student, it will have properties like name, age, address, id, etc and methods like <code> updateAddress, updateNam,</code> etc.</p>
+        <h2>Objects and properties</h2>
+        <p>A JavaScript object has properties associated with it. A property of an object can be explained as a variable that is attached to the object. Object properties are basically the same as ordinary JavaScript variables, except for the attachment to objects. The properties of an object define the characteristics of the object. You access the properties of an object with a simple dot-notation:</p>
+        <div><code>objectName.propertyName</code></div>
+        <p>Like all JavaScript variables, both the object name (which could be a normal variable) and property name are case sensitive. You can define a property by assigning it a value. For example, let’s create an object named <code>myCar </code>and give it properties named <code> make, model,</code> and <code>year</code> as follows:</p>
+        <div><code>var myCar = new Object();<br>
+            myCar.make = 'Ford';<br>
+            myCar.model = 'Mustang';<br>
+            myCar.year = 1969;</code></div>
+
+    <h2>Creating Objects In JavaScript :</h2>
+    <h2>Create JavaScript Object with Object Literal</h2>
+    <p>One of easiest way to create a javascript object is object literal, simply define the property and values inside curly braces as shown below</p>
+    <div><code>let bike = {name: 'SuperSport', maker:'Ducati', engine:'937cc'};</code></div>
+    <h2>Create JavaScript Object with Constructor</h2>
+    <p>Constructor is nothing but a function and with help of new keyword, constructor function allows to create multiple objects of same flavor as shown below </p>
+    <div><code>function Vehicle(name, maker) { <br>
+        this.name = name; <br>
+        this.maker = maker; <br>
+     } <br>
+     let car1 = new Vehicle(’Fiesta’, 'Ford’); <br>
+     let car2 = new Vehicle(’Santa Fe’, 'Hyundai’) <br>
+     console.log(car1.name);    //Output: Fiesta <br>
+     console.log(car2.name);    //Output: Santa Fe</code></div>
+     
+
+        <h2>Using the JavaScript Keyword new</h2>
+        <p>The following example also creates a new JavaScript object with four properties:
+
+           <br> <br>Example</p>
+           <div><code>var person = new Object();<br>
+            person.firstName = “John”;<br>
+            person.lastName = “Doe”;<br>
+            person.age = 50;<br>
+            person.eyeColor = “blue”;</code></div>
+
+            <h2>Using the <code style="font-size: x-large;"> Object.create </code> method</h2>
+            <p>Objects can also be created using the <code> Object.create() </code> method. This method can be very useful, because it allows you to choose the prototype object for the object you want to create, without having to define a constructor function.</p>
+            <div><code>  // Animal properties and method encapsulation <br>
+                var Animal = {<br>
+                  type: 'Invertebrates',     // Default value of properties <br>
+                  displayType: function() {  // Method which will display type of Animal <br>
+                    console.log(this.type);<br>
+                  }<br>
+                };<br>
+                // Create new animal type called animal1 <br>
+                var animal1 = Object.create(Animal);<br>
+                animal1.displayType(); // Output:Invertebrates<br>
+                // Create new animal type called Fishes<br>
+                var fish = Object.create(Animal);<br>
+                fish.type = 'Fishes';<br>
+                fish.displayType(); <br>
+                // Output:Fishes</code></div>
+
+            <script>
+                // Create object using constructor
+                function Vehicle(Make,Model,Year) {
+                    this.Make = Make;
+                    this.Model = Model;
+                    this.Year = Year;
+                }
+                let car1 = new Vehicle ("Tata","Indica","2001")
+                let car2 = new Vehicle ("Nisson","Sentra","2021")
+                console.log (car1);
+                console.log (car2);
+                
+                // Create object using new keyword
+                var person = new Object();
+                person.firstName ="John"
+                person.lastName = "Doe"
+
+                console.log (person);
+
+                // Create object using object.create 
+            
+
+                </script>
+</body>
+</html>
