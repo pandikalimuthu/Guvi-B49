@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const json1='{"name":"Person 1","age":5}';
+const json2='{"age":5,"name":"Person 1"}';
+
+// Step 1 parse the json string
+
+const obj1=JSON.parse(json1);
+const obj2=JSON.parse(json2);
+
+// compare the Keys length
+
+if(Object.keys(obj1).length===Object.keys(obj2).length){
+  console.log("true");
+} else{
+  console.log("fales");
+}
+
+// compare the property of key and value
+
+for(let key in obj1){
+  if(!obj2.hasOwnProperty(key)||obj1[key] !== obj2[key]){
+  console.log("false");
+  }
+}
+console.log(obj1.name);
+    </script>
+
+</body>
+</html>

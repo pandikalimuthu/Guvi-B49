@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display the country flags in the console</title>
+</head>
+<body>
+    <script>
+        var xhr = new XMLHttpRequest();
+        var method = 'GET';
+        var url = "https://restcountries.com/v3.1/all";
+        xhr.open(method,url,true);
+        xhr.setRequestHeader ("content-Type","application/json");
+        xhr.onload = function(){
+            if(xhr.status===200){
+                var responce = JSON.parse(xhr.responseText)
+                for (var i=0;i<responce.length;i++){
+                console.log("Country: ",responce[i].name.official);
+                console.log("Region ",responce[i].region);
+                console.log("Subregion ",responce[i].subregion);
+                console.log("Population ",responce[i].population);
+            }
+            }else {
+                console.log(xhr.status)
+            }
+            
+        }
+        xhr.send();
+    </script>
+    
+</body>
+</html>
